@@ -1,0 +1,11 @@
+﻿@model CategoryResponseModel
+<h1>Are you sure you want to delete</h1>
+<form asp-action="delete" asp-controller="category">
+<div>
+    <label>Name</label>
+    <input type="text" disabled value="@Model.CategoryName" name="CategoryName"  class="form-control"/>
+    <input type="hidden" value="@Model.Id" name="Id" />
+</div>
+<button class="btn btn-danger">Delete</button>
+
+</form>

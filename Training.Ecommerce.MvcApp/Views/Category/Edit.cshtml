@@ -1,0 +1,9 @@
+﻿@model CategoryResponseModel
+<form asp-action="Edit" asp-controller="Category">
+    <div class="form-group">
+        <label for="CategoryName">Name</label>
+        <input type="text" name="CategoryName" value="@Model.CategoryName" class="form-control" />
+   <input type="hidden" name="Id" value="@Model.Id" />
+    </div>
+    <button class="btn-primary btn">Update</button>
+</form>
