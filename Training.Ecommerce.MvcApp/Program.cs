@@ -12,15 +12,19 @@ builder.Services.AddControllersWithViews();
 #region repository_injection
 //Repository injection
 builder.Services.AddScoped<ICategoryRepository, CategoryRepository>();
+builder.Services.AddScoped<IProductRepository, ProductRepository>();
 #endregion
 
 //service injection
 builder.Services.AddScoped<ICategoryService, CategoryService>();
-
+builder.Services.AddScoped<IProductService, ProductService>();
 builder.Services.AddDbContext<EcommerceDbContext>(context => {
     context.UseSqlServer(builder.Configuration.GetConnectionString("ECommerceDb"));
 
 });
+
+builder.Services.AddAutoMapper(typeof(Program));
+
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.

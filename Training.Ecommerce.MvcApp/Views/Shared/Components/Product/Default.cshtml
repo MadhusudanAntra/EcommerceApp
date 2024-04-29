@@ -1,0 +1,7 @@
+﻿@model IEnumerable<ProductResponseModel>
+
+@foreach (var item in Model)
+{
+    <partial name="_ProductCard" model="@item"></partial>
+
+}
